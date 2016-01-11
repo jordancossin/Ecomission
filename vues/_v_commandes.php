@@ -27,31 +27,35 @@
         <hr>
         <div class="row">
             <div class="panel panel-info">
-                <div class="panel-heading">Descriptif des éléments hors forfait</div>
+                <div class="panel-heading">Descriptif des éléments de la commande</div>
                 <table class="table table-bordered table-responsive">
                     <thead>
                         <tr>
-                            <th class="date">Date</th>
-                            <th class="libelle">Libellé</th>
-                            <th class="montant">Conditionnement</th>
-                            <th class="montant">Montant</th>
-                            <th class="action">&nbsp;</th>
+                            <th class="date"> Date               </th>
+                            <th class="libelle"> Libellé         </th>
+                            <th class="montant"> Conditionnement </th>
+                            <th class="montant"> Montant         </th>
+                            <th class="action"> &nbsp;           </th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($lesFraisHorsForfait as $unFraisHorsForfait) {
-                            $libelle = htmlspecialchars($unFraisHorsForfait['libelle']);
-                            $date = $unFraisHorsForfait['date'];
-                            $montant = $unFraisHorsForfait['montant'];
-                            $id = $unFraisHorsForfait['id'];
+                        foreach ($lesElement as $unProduit) {
+                            $fournisseur     = htmlspecialchars($unProduit['fournisseur']);
+                            $produit         = htmlspecialchars($unProduit['libelle']);
+                            $conditionnement = htmlspecialchars($unProduit['conditionnement']);
+                            $date            = $unProduit['date'];
+                            $montant         = $unProduit['montant'];
+                            $id              = $unProduit['id'];
                             ?>
                             <tr>
-                                <td> <?php echo $date ?></td>
-                                <td> <?php echo $libelle ?></td>
-                                <td><?php echo $montant ?></td>
-                                <td><a href="index.php?uc=gererFrais&action=supprimerFrais&idFrais=<?php echo $id ?>"
-                                 onclick="return confirm('Voulez-vous vraiment supprimer ce frais?');">Supprimer ce frais</a></td>
+                                <td> <?php echo $date ?>            </td>
+                                <td> <?php echo $libelle ?>         </td>
+                                <td> <?php echo $fournisseur ?>     </td>
+                                <td> <?php echo $conditionnement ?> </td>
+                                <td> <?php echo $montant ?>         </td>
+                                <td> <a href="index.php?uc=gererFrais&action=supprimerElement&idElement=<?php echo $id ?>"
+                                 onclick="return confirm('Voulez-vous vraiment supprimer cet élément?');">Supprimer cet élément</a></td>
                              </tr>
                              <?php
                          }
@@ -61,28 +65,67 @@
              </div>
          </div>
          <div class="row">
-            <h3>Nouvel élément de ma commande</h3>
-            <div class="col-md-4">
-                <form action="index.php?uc=gererFrais&action=validerCreationFrais" method="post" role="form">
-                    <div class="form-group">
-                        <label for="txtDateHF">Date (jj/mm/aaaa): </label>
-                        <input type="text" id="txtDateHF" name="dateFrais" class="form-control" id="text">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtLibelleHF">Libellé</label>
-                        <input type="text" id="txtLibelleHF" name="libelle" class="form-control" id="text">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtMontantHF">Montant : </label>
-                        <div class="input-group">
-                            <span class="input-group-addon">€</span>
-                            <input type="text" id="txtMontantHF" name="montant" class="form-control" value="">
-                        </div>
-                    </div>
-                    <button class="btn btn-success" type="submit">Ajouter</button>
-                    <button class="btn btn-danger" type="reset">Effacer</button>
-                </form>
-            </div>
-        </div>
 
-    </body>
+
+            <div id="container">
+              <div id="body">
+                <div class="mhead"><h2>Saisi d'un élément de la commande: </h2></div>
+                <form action="index.php?uc=gererFrais&action=validerCreationFrais" method="post" role="form">
+                    <div id="dropdowns">
+                       <div id="center" class="cascade">
+                          <?php
+                          $sql = "SELECT * FROM fournisseurs ORDER BY nom";
+                          $query = mysqli_query($con, $sql);
+                          ?>
+                          <label>Fournisseur:
+                            <select name="Fournisseur" id = "drop1">
+                              <option value="">Selection d'un fournisseur</option>
+                              <?php while ($rs = mysqli_fetch_array($query, MYSQLI_ASSOC )) { ?>
+                              <option value="<?php echo $rs["id"]; ?>"><?php echo $rs["Fournisseur_name"]; ?></option>
+                              <?php } ?>
+                          </select>
+                      </label>
+                  </div>
+
+                  <div class="cascade" id="produit"></div>
+
+                  <div id="city" class="cascade"></div>
+              </div>
+          </div>
+      </div>
+      <script src="jquery-1.9.0.min.js"></script>
+      <script>
+      $(document).ready(function(){
+        $("select#drop1").change(function(){
+
+            var Fournisseur_id =  $("select#drop1 option:selected").attr('value');
+// alert(Fournisseur_id);
+$("#produit").html( "" );
+$("#city").html( "" );
+if (Fournisseur_id.length > 0 ) {
+
+ $.ajax({
+    type: "POST",
+    url: "fetch_produit.php",
+    data: "Fournisseur_id="+Fournisseur_id,
+    cache: false,
+    beforeSend: function () {
+        $('#produit').html('<img src="loader.gif" alt="" width="24" height="24">');
+    },
+    success: function(html) {
+        $("#produit").html( html );
+    }
+});
+}
+});
+    });
+      </script>
+
+
+      <button class="btn btn-success" type="submit">Ajouter</button>
+      <button class="btn btn-danger" type="reset">Effacer</button>
+  </form>
+</div>
+</div>
+
+</body>
