@@ -32,6 +32,8 @@ else {
 // charger la uc selon son identifiant
 switch ($uc)
 {
+	case 'accueil': 
+            include("controleurs/c_accueil.php");break;
     case 'connexion' :
         include 'controleurs/c_connexion.php'; break;
     case 'gererContrats' :
@@ -39,6 +41,7 @@ switch ($uc)
     case 'gererLivraisons' :
         include 'controleurs/c_gerer_livraisons.php'; break;
     default : include 'vues/_v_home.php'; break;
+	
 }
 
 

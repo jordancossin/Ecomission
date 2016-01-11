@@ -7,7 +7,7 @@
     <section class="popupBody">
         <!-- Social Login -->
         <div class="social_login">
-            <form role="form" method="post" action="index.php?uc=connexion&action=valideConnexion">
+            <form role="form" method="post" action="index.php?uc=accueil&action=accueilConnexion">
                 <! <fieldset >
                 <div class="form-group">
                     <label for="Identifiant" class="control-label"  width= "100px">Identifiant</label>

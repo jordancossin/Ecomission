@@ -15,12 +15,17 @@ switch ($action) {
             if (!is_array($visiteur)) {
                 ajouterErreur("Login ou mot de passe incorrect");
                 include("vues/v_erreurs.php");
-                include("vues/v_connexion.php");
+                include("vues/_v_connexion.php");
             } else {
                 $id = $visiteur['id'];
                 $nom = $visiteur['nom'];
                 $prenom = $visiteur['prenom'];
                 connecter($id, $nom, $prenom);
+                header('Location: index.php');
+            }
+            break;
+			
+	case 'accueilConnexion': {
                 header('Location: index.php');
             }
             break;
