@@ -77,15 +77,15 @@
                           $sql = "SELECT * FROM fournisseurs ORDER BY nom";
                           $query = mysqli_query($con, $sql);
                           ?>
-                          <label>Fournisseur:
-                            <select name="Fournisseur" id = "drop1">
-                              <option value="">Selection d'un fournisseur</option>
-                              <?php while ($rs = mysqli_fetch_array($query, MYSQLI_ASSOC )) { ?>
-                              <option value="<?php echo $rs["id"]; ?>"><?php echo $rs["Fournisseur_name"]; ?></option>
-                              <?php } ?>
-                          </select>
-                      </label>
-                  </div>
+                            <label>Fournisseur:
+                                <select name="Fournisseur" id = "drop1">
+                                  <option value="">Selection d'un fournisseur</option>
+                                  <?php while ($rs = mysqli_fetch_array($query, MYSQLI_ASSOC )) { ?>
+                                  <option value="<?php echo $rs["id"]; ?>"><?php echo $rs["Fournisseur_name"]; ?></option>
+                                  <?php } ?>
+                                </select>
+                            </label>
+                        </div>
 
                   <div class="cascade" id="produit"></div>
 
@@ -98,16 +98,16 @@
       $(document).ready(function(){
         $("select#drop1").change(function(){
 
-            var Fournisseur_id =  $("select#drop1 option:selected").attr('value');
-// alert(Fournisseur_id);
+            var id_fourn =  $("select#drop1 option:selected").attr('value'); // ATTENTION
+// alert(id_fourn);
 $("#produit").html( "" );
-$("#city").html( "" );
-if (Fournisseur_id.length > 0 ) {
+$("#conditionnement").html( "" );
+if (id_fourn.length > 0 ) {
 
  $.ajax({
     type: "POST",
     url: "fetch_produit.php",
-    data: "Fournisseur_id="+Fournisseur_id,
+    data: "id_fourn="+id_fourn,
     cache: false,
     beforeSend: function () {
         $('#produit').html('<img src="loader.gif" alt="" width="24" height="24">');

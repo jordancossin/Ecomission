@@ -1,6 +1,6 @@
 <?php
 
-include("connection.php");
+$con= mysql_connect("localhost", "root", "root");
 $country_id = trim(mysql_escape_string($_POST["country_id"]));
 
 $sql = "SELECT * FROM produits WHERE id_fourn = ".$id_fourn ." ORDER BY libelle";
