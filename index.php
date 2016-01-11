@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
  * Page d'accueil de l'application Ecomission
 
  * Point d'entrée unique de l'application
@@ -8,10 +8,6 @@
  */
 
 session_start(); // début de session
-
-
-
-
 
 // on simule un utilisateur connecté (en phase de test)
 $_SESSION['id']     = 9999;
@@ -34,15 +30,15 @@ else {
     $uc = 'home';
 }
 // charger la uc selon son identifiant
-switch ($uc) 
+switch ($uc)
 {
-    case 'gererNegociants' : 
+    case 'gererNegociants' :
         include 'controleurs/c_gerer_negociants.php'; break;
-    case 'gererContrats' : 
+    case 'gererContrats' :
         include 'controleurs/c_gerer_contrats.php'; break;
-    case 'gererLivraisons' : 
+    case 'gererLivraisons' :
         include 'controleurs/c_gerer_livraisons.php'; break;
-    default : include 'vues/v_home.php'; break;
+    default : include 'vues/_v_home.php'; break;
 }
 
 

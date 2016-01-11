@@ -20,6 +20,7 @@ textarea {
 body {
   font-size: 1em;
   line-height: 1.4;
+  width:100%;
 }
 ::-moz-selection {
   background: #b3d4fc;
@@ -293,6 +294,7 @@ body.blurred > * {
 html,
 body {
   font-size: 100%;
+  width:100%;
 }
 body {
   background: #ffffff;
@@ -301,17 +303,17 @@ body {
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
+  width:100%;
 }
 
 
-h1,
-h2,
-h3,
+
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: initial;
   font-weight: 500;
+  color: #4582B4;
 }
 
 
@@ -382,9 +384,9 @@ header.site-header {
 #main-menu ul {
   position: relative;
   z-index: 9;
-  margin-top: -15px;
-  margin-right: 488px;
   height: 82px;
+  margin-left: 125px;
+  display: flex;
   background-color: #4582B4;
   -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
@@ -413,7 +415,6 @@ header.site-header {
   text-transform: uppercase;
 }
 #main-menu ul li a:hover {
-  /*color: #f55858;	*/
 }
 #main-menu ul li:first-child {
   margin-left: 30px;
@@ -421,10 +422,7 @@ header.site-header {
 #main-menu ul li:last-child {
   margin-right: 30px;
 }
-#main-menu ul li.active a {
-  background: transparent;
-  /*color: #f55858;*/
-}
+
 /*** TOP SECTION STYLING ***/
 .top-section {
   background-color: #f55858;
@@ -470,7 +468,7 @@ header.site-header {
 	color: #ff6;
 }
 .top-section a:hover {
-	color: #600;
+
 }
 
 
@@ -524,6 +522,3 @@ header.site-header {
     line-height: 40px;
   }
 }
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */

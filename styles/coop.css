@@ -1,14 +1,35 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }
+
 #content-container-two-column
 {
-    margin-top:5px;
-    margin-right: auto;
-    padding: 15px;
-    width: 992px;
+    width: 74%;
     border: 1px solid #6699cc;
     background: url(../img/bg-content-side.png) repeat-y right;
     position: relative;
-	height: 1220px;
-	margin-left: 425px;
+	height: 1070px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#focusedInput {
+    border-color: #ccc;
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    outline: thin dotted\9;
+    -webkit-box-shadow: 0 0 8px rgba(82,168,236,.6);
+    box-shadow: 0 0 8px rgba(82,168,236,.6);
+	margin-left: 50px;
 }
 
 #content-main-two-column
@@ -136,6 +157,7 @@ ul.list-of-links li.current
     background-color: #d9edf7;
     border-color: #e7e7e7;
 }
+@media (min-width: 768px)
 .navbar {
     border-radius: 4px;
 }

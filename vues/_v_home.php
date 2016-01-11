@@ -4,10 +4,13 @@
         <title>Les Petits Paniers</title>
         <meta charset="UTF-8" />
         <meta lang="fr">
+				<!-- Main Styles -->
+		<link rel="stylesheet" type="text/css" href="styles/templatemo_style.css">
         <link rel="stylesheet" type="text/css" href="styles/screen.css" />
         <link rel="stylesheet" type="text/css" href="styles/coop.css" />
 		<link rel="stylesheet" type="text/css" href="styles/default.css" />
 		<link rel="stylesheet" type="text/css" href="styles/component.css" />
+		<link  rel= "stylesheet"  href= "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" >
 		<script src="js/modernizr.custom.js"></script>
 		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
@@ -15,13 +18,7 @@
 		<!-- Bootstrap core CSS -->
         <link href="styles/bootstrap.css" rel="stylesheet">
 		<link href="styles/bootstrap.min.css" rel="stylesheet">
-		
-		
-		
-		<!-- Main Styles -->
-    <link rel="stylesheet" href="styles/templatemo_style.css">
-	<link rel="stylesheet" href="css/templatemo.css">
-		
+				
     </head>
     <body>
         <?php
@@ -110,12 +107,12 @@
 
                 <div id="content-main-two-column">
                     <h2><center><u>Vente direct du producteur  au consommateur</u></center></h2>
-                    <img src="img/logo ecomissions.jpg" alt="" width = "540px" height="500px"/>
+                    <img src="img/logo ecomissions.jpg" alt="" width = "440px" height="400px"/>
 					<p>
-						<h2>
-							Vous êtes intéressés par une relation directe entre producteurs et consommateurs ?
+						<h5>
+							Vous êtes intéressés par une relation directe entre producteurs et consommateurs ?<br>
 							Les petits paniers sous le préau de l'association Ecomissions de Volstroff vous concerne !
-						</h2>
+						</h5>
 					</p>
                     <div id="three-column-container">
                         <div id="three-column-side1">
@@ -123,75 +120,84 @@
                                 <img src="img/produits.jpg" class="photo-border" height="80px" width="160px" alt="Stockage" />
                             </a>
                             <h2>Sous le préau</h2>
-                            <p>								
-								Retirez vos commandes les 2 ème mardi de chaque mois,
-								sous le préau de l'ecole de Volstroff, de 18h30 à 19h30. 
-								<br />
+                            <p>
+								<h4>
+									Retirez vos commandes les 2 ème mardi de chaque mois,
+									sous le préau de l'ecole de Volstroff, de 18h30 à 19h30. 
+								</h4>
+								<br/>
 								<a href="#.aspx" id="blue">
 									En savoir plus
 								</a>
 								<img class="arrow" src="img/arrow.gif" alt="" />
 							</p>
-							<strong>Mairie de Volstroff</strong><br />
-							Tél: 03 82 56 94 33 <br />
-							Fax: 03 82 56 88 80 <br />
-							50 rue Principale <br />
-							57940 Volstroff <br />
+							<h4><strong>Mairie de Volstroff</strong><br />
+								Tél: 03 82 56 94 33 <br />
+								Fax: 03 82 56 88 80 <br />
+								50 rue Principale <br />
+								57940 Volstroff <br />
+							</h4>
 							<br />
-							<a href="#">plan d'accès</a>
+							<a href="#" id="blue">plan d'accès</a>
                         </div>
                         <div id="three-column-side2">
 							<a href="#.aspx">
                                 <img src="img/produits.jpg" class="photo-border" height="80px" width="160px" alt="Produits" />
                             </a>						
                             <h2>Les producteurs</h2>
-                            <p>                             
-								Des producteurs lorrains, aux fermes orientées vers
-								des productions biologiques.	
-								<br>Producteurs à votre écoute
+                            <p>         
+								<h4>
+									Des producteurs lorrains, aux fermes orientées vers
+									des productions biologiques variées et traditionels.	
+								</h4>
 								<br />
 								<a href="#.aspx" id="blue">
 								   En savoir plus
 								</a>
 								<img class="arrow" src="img/arrow.gif" alt="" />
 							</p>
-							<strong>Mairie de Volstroff</strong><br />
-							Tél: 03 82 56 94 33 <br />
-							Fax: 03 82 56 88 80 <br />
-							50 rue Principale <br />
-							57940 Volstroff <br />
+							<h4>
+								<strong>Mairie de Volstroff</strong><br />
+								Tél: 03 82 56 94 33 <br />
+								Fax: 03 82 56 88 80 <br />
+								50 rue Principale <br />
+								57940 Volstroff <br />
+							</h4>
 							<br />
-							<a href="#">plan d'accès</a>
+							<a href="#" id="blue">plan d'accès</a>
                         </div>
                         <div id="three-column-middle">
                             <a href="#.aspx">
                                 <img src="img/produits.jpg" class="photo-border" height="80px" width="160px" alt="Produits" />
                             </a>
                             <h2>Les produits</h2>
-                            <p>							
-								Nos producteurs vous proposent une gamme de produits
-								frais et locaux.						
-								<br>Consommateurs entièrement satisfait
+                            <p>		
+								<h4>
+									Nos producteurs vous proposent une gamme de produits
+									frais et locaux.						
+									<br>Consommateurs entièrement satisfait
+								</h4>
 								<br />
 								 <a href="#.aspx" id="blue">
 									En savoir plus
 								</a>						
 								<img class="arrow" src="img/arrow.gif" alt="" />
 							</p>
-							<strong>Mairie de Volstroff</strong><br />
-							Tél: 03 82 56 94 33 <br />
-							Fax: 03 82 56 88 80 <br />
-							50 rue Principale <br />
-							57940 Volstroff <br />
+							<h4><strong>Mairie de Volstroff</strong><br />
+								Tél: 03 82 56 94 33 <br />
+								Fax: 03 82 56 88 80 <br />
+								50 rue Principale <br />
+								57940 Volstroff <br />
+							</h4>
 							<br />
-							<a href="#">plan d'accès</a>
+							<a href="#" id="blue">plan d'accès</a>
                         </div>
                     </div>
                 </div>
 
                 <div id="content-side-two-column">
                     <h2>
-                        <u>Actualités</u>
+                        <u>Description</u>
                     </h2>
                     <ul class="list-of-links">
                         <li>
