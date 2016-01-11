@@ -32,8 +32,8 @@ else {
 // charger la uc selon son identifiant
 switch ($uc)
 {
-    case 'gererNegociants' :
-        include 'controleurs/c_gerer_negociants.php'; break;
+    case 'connexion' :
+        include 'controleurs/c_connexion.php'; break;
     case 'gererContrats' :
         include 'controleurs/c_gerer_contrats.php'; break;
     case 'gererLivraisons' :
