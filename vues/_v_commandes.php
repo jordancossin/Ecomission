@@ -21,7 +21,6 @@
 
 </head>
 <body>
-
     <div class="row">
         <h2>Renseigner ma commande du mois <?php echo $numMois . "-" . $numAnnee ?></h2>
         <hr>
@@ -66,7 +65,7 @@
          </div>
          <div class="row">
 
-
+ <?php $con= mysqli_connect("localhost", "root", "", "ecomission"); ?>
             <div id="container">
               <div id="body">
                 <div class="mhead"><h2>Saisi d'un élément de la commande: </h2></div>
@@ -74,14 +73,14 @@
                     <div id="dropdowns">
                        <div id="center" class="cascade">
                           <?php
-                          $sql = "SELECT * FROM fournisseurs ORDER BY nom";
+                          $sql = "SELECT id_fourn, nom FROM fournisseurs ORDER BY nom";
                           $query = mysqli_query($con, $sql);
                           ?>
                             <label>Fournisseur:
                                 <select name="Fournisseur" id = "drop1">
                                   <option value="">Selection d'un fournisseur</option>
                                   <?php while ($rs = mysqli_fetch_array($query, MYSQLI_ASSOC )) { ?>
-                                  <option value="<?php echo $rs["id"]; ?>"><?php echo $rs["Fournisseur_name"]; ?></option>
+                                  <option value="<?php echo $rs["id_fourn"]; ?>"><?php echo $rs["nom"]; ?></option>
                                   <?php } ?>
                                 </select>
                             </label>
@@ -110,7 +109,7 @@ if (id_fourn.length > 0 ) {
     data: "id_fourn="+id_fourn,
     cache: false,
     beforeSend: function () {
-        $('#produit').html('<img src="loader.gif" alt="" width="24" height="24">');
+        $('#produit').html('<img src="img/loader.gif" alt="" width="24" height="24">');
     },
     success: function(html) {
         $("#produit").html( html );
