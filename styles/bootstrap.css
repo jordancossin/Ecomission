@@ -147,6 +147,8 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+	float: inherit;
+
 }
 button[disabled],
 html input[disabled] {
@@ -283,8 +285,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot');
+  src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -919,7 +921,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: rgba(164, 245, 170, 0.59);
   background-color: #fff;
 }
 input,
@@ -936,7 +938,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+	color: white;
   text-decoration: underline;
 }
 a:focus {
@@ -1431,7 +1433,9 @@ pre code {
   margin-left: auto;
 }
 .row {
-  margin-left: -15px;
+      margin-left: 30px;
+    margin-bottom: auto;
+        margin-top: 30px;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
@@ -2327,7 +2331,7 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 label {
-  display: inline-block;
+  display: block;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
@@ -2369,7 +2373,7 @@ output {
   color: #555;
 }
 .form-control {
-  width: 25%;
+  width: 70%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -2795,7 +2799,7 @@ select[multiple].form-group-lg .form-control {
 }
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 8px 22px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
@@ -2813,8 +2817,8 @@ select[multiple].form-group-lg .form-control {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-    margin-left: 30px;
-    margin-top: 22px;
+  margin-left: 19px;
+
 }
 .btn:focus,
 .btn:active:focus,
@@ -2898,6 +2902,7 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #428bca;
   border-color: #357ebd;
+      margin-top: -27px;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -5106,7 +5111,6 @@ a.list-group-item-danger.active:focus {
 }
 .panel {
   margin-bottom: 20px;
-  background-color:#009cde;
   color: white;
   border: 1px solid transparent;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);

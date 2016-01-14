@@ -1,47 +1,47 @@
 <?php
 /**
- * Page d'accueil de l'application Ecomission
-
- * Point d'entrée unique de l'application
- * @author Cossin Jordan / Pierson Loic
+ * Index Controleur de l'application
+ 
  * @package default
+ * @author Franck Noel
  */
-
-session_start(); // début de session
-
-// on simule un utilisateur connecté (en phase de test)
-$_SESSION['id']     = 9999;
-$_SESSION['nom']    = 'Dupont';
-$_SESSION['prenom'] = 'Jean';
-
-// inclure les bibliothèques de fonctions
-require_once 'include/_config.inc.php';
-require_once 'include/_data.lib.php';
-require_once 'include/_forms.lib.php';
-
-/*
-  Récupère l'identifiant de la page passée par l'URL.
-  Si non défini, on considère que la page demandée est la page d'accueil
+/**
+ * 
  */
-if (isset($_GET["uc"])) {
-    $uc = $_GET["uc"];
-}
-else {
-    $uc = 'home';
-}
-// charger la uc selon son identifiant
-switch ($uc)
-{
-	case 'accueil': 
-            include("controleurs/c_accueil.php");break;
-    case 'connexion' :
-        include 'controleurs/c_connexion.php'; break;
-    case 'gererContrats' :
-        include 'controleurs/c_gerer_contrats.php'; break;
-    case 'gererLivraisons' :
-        include 'controleurs/c_gerer_livraisons.php'; break;
-    default : include 'vues/_v_home.php'; break;
-	
-}
+session_start();
+require_once("include/fct.inc.php");
+require_once ("include/class.pdogsb.inc.php");
+
+include("vues/v_entete.php") ;
 
 
+
+$pdo = PdoGsb::getPdoGsb();
+$estConnecte = estConnecte();
+if(!isset($_REQUEST['uc']) || !$estConnecte){
+     $_REQUEST['uc'] = 'connexion';
+}	 
+$uc = $_REQUEST['uc'];
+switch($uc){
+		
+	case 'connexion':{
+		include("controleurs/c_connexion.php");break;
+	}
+	case 'connexions':{
+		include("controleurs/c_connexion.php");break;
+	}
+	case 'gererFrais' :{
+		include("controleurs/c_gererFrais.php");break;
+	}
+	case 'etatFrais' :{
+		include("controleurs/c_etatFrais.php");break; 
+	}
+        case 'validerFrais' :{
+                include("controleurs/c_validerFrais.php");break;
+        }
+        case 'suiviFrais' :{
+                include("controleurs/c_suiviFrais.php");break;
+        }
+		default : include 'vues/v_home.php'; break;
+}
+?>
